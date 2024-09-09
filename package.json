@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runTestWithAllureReport": "bash runTest.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cypress": "^13.10.0"
+    "cypress": "^13.10.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.30.0",
+    "mocha-allure-reporter": "^1.4.0"
   }
 }
