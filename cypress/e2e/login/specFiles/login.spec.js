@@ -10,7 +10,6 @@ describe('Login Tests', () => {
       });
 
   it('should fail login with invalid credentials', () => {
-        goToUrl(Cypress.env('apiUrl'));
         login(getRandomString(10), getRandomString(10));
         assertLoginFailure(INVALID_USERNAME_MSG);
       });    

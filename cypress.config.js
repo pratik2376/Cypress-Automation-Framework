@@ -1,4 +1,6 @@
 const { defineConfig } = require('cypress');
+const dotenv = require('dotenv');
+dotenv.config();
 
 module.exports = defineConfig({
   // Global settings for Cypress tests
@@ -31,9 +33,9 @@ module.exports = defineConfig({
 
     // Environment variables for tests
     env: {
-      apiUrl: 'https://practice.expandtesting.com/login',
-      username: 'practice',
-      password: 'SuperSecretPassword!',
+      apiUrl: process.env.API_URL,
+      username: process.env.TEST_USERNAME,
+      password: process.env.TEST_PASSWORD
     },
 
     // Setup Node event listeners for tasks, plugins, etc.
