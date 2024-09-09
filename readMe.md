@@ -45,15 +45,15 @@ Ensure you have the following prerequisites installed:
 2. Install cypress and other dependenciea
 
 
-### Configuration
+## Configuration
 
-## Environment Variables
+### Environment Variables
 
 1. .env File: Create a .env file in the root of the project and add your environment variables there.
 2. cypress.config.js: Define environment variables directly in the Cypress configuration file.
 3. CLI: Pass environment variables directly when running Cypress.
 
-## Cypress Configuration
+### Cypress Configuration
 
 Configure Cypress settings in cypress.config.js. Key settings include:
 
