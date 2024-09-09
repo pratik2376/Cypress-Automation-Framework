@@ -61,9 +61,9 @@ Configure Cypress settings in cypress.config.js. Key settings include:
 2. Test Files: Specify the test file patterns.
 3. Viewport: Define the default viewport size.
 
-### writing-tests
+## writing-tests
 
-## test-structure
+### test-structure
 
 Its divided into 3 layers - 
 
@@ -72,19 +72,19 @@ Its divided into 3 layers -
 3. Spec layer - Actual test case implementation.
 
 
-### running-tests
+## running-tests
 
-## running-tests-locally
+### running-tests-locally
 
 1. npx cypress open - GUI mode
 2. npx cypress run - To run all the test cases.
 3. npm run runTestWithAllureReport - 
 Created seperate file 'runTest.sh' which is having commands to run all the spec files.
 
-### reporting
+## reporting
 
-## built-in-reports 
+### built-in-reports 
 Cypress provides built-in test reports that are displayed in the terminal or Cypress Test Runner.
 
-## allure-reporting
+### allure-reporting
 Added dependency for allure reporting. At the end of test execution it will open report automatically.
