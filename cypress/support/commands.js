@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+require('cypress-downloadfile/lib/downloadFileCommand')
+
+
+Cypress.Commands.add('dragAndDrop', (subject, target, options = {}) => {
+    const { force = false } = options;
+  
+    cy.xpath(subject).trigger('mousedown', { which: 1, force });
+    cy.xpath(target).trigger('mousemove', { which: 1, force });
+    cy.xpath(target).trigger('mouseup', { which: 1, force });
+  });
+
+  Cypress.Commands.add('getIframeBody', (iframeSelector) => {
+    return cy
+      .get(iframeSelector)
+      .its('0.contentDocument.body') // Access the iframe's body
+      .should('be.visible') // Ensure the body is visible
+      .then(cy.wrap); // Wrap the body with Cypress commands
+  });

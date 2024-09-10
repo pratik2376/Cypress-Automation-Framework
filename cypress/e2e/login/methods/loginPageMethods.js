@@ -23,8 +23,9 @@ function assertLoginFailure(loginFailedSms) {
   cy.xpath(LOGIN_PAGE_LOCATORS.loginPage.invalidUsernameMessage).should('contain', loginFailedSms);
 }
 
-function logout(){
+function logout(logoutMessage){
     cy.xpath(LOGIN_PAGE_LOCATORS.loginPage.logoutButton).click();
+    cy.xpath(LOGIN_PAGE_LOCATORS.loginPage.logoutMessage).should('contain', logoutMessage);
 }
 
 // Export functions

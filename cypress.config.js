@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress');
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -33,7 +34,13 @@ module.exports = defineConfig({
 
     // Environment variables for tests
     env: {
-      apiUrl: process.env.API_URL,
+      apiUrlLogin: process.env.API_URL+'/login',
+      apiurlDragAndDrop: process.env.API_URL+'/drag-and-drop',
+      apiUrlDropDown:process.env.API_URL+'/dropdown',
+      apiUrlIframe:process.env.API_URL+'/iframe',
+      apiUrlKeyPress:process.env.API_URL+'/key-presses',
+      apiUrlNewWindow:process.env.API_URL+'/windows',
+      apiUrlRadioButton:process.env.API_URL+'/radio-buttons',
       username: process.env.TEST_USERNAME,
       password: process.env.TEST_PASSWORD
     },
@@ -41,7 +48,7 @@ module.exports = defineConfig({
     // Setup Node event listeners for tasks, plugins, etc.
     setupNodeEvents(on, config) {
       // Example: Setting up a task to read a file
-      on('task', {
+      on('task', {downloadFile},{
         readFile(filePath) {
           const fs = require('fs');
           return fs.readFileSync(filePath, 'utf8');
