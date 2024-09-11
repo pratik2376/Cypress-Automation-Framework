@@ -1,8 +1,8 @@
 const DRAG_AND_DROP_LOCATORS ={
+    dragAndDropLoactors:{
     draggableObject:"//div[@id='column-a']",
-    droppableObject:"//div[@id='column-b']",
-    draggableObjectText:"//header[contains(text(),'A')]",
-    droppableObjectText:"//header[contains(text(),'B')]"
+    droppableObject:"//div[@id='column-b']"
+    }
 
 }
 

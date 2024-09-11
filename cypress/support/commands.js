@@ -26,15 +26,6 @@
 
 require('cypress-downloadfile/lib/downloadFileCommand')
 
-
-Cypress.Commands.add('dragAndDrop', (subject, target, options = {}) => {
-    const { force = false } = options;
-  
-    cy.xpath(subject).trigger('mousedown', { which: 1, force });
-    cy.xpath(target).trigger('mousemove', { which: 1, force });
-    cy.xpath(target).trigger('mouseup', { which: 1, force });
-  });
-
   Cypress.Commands.add('getIframeBody', (iframeSelector) => {
     return cy
       .get(iframeSelector)

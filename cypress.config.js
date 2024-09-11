@@ -41,8 +41,11 @@ module.exports = defineConfig({
       apiUrlKeyPress:process.env.API_URL+'/key-presses',
       apiUrlNewWindow:process.env.API_URL+'/windows',
       apiUrlRadioButton:process.env.API_URL+'/radio-buttons',
+      apiUrlfileUpload:process.env.API_URL+'/upload',
+      apiUrlFileDownload:process.env.API_URL+'/download',
       username: process.env.TEST_USERNAME,
-      password: process.env.TEST_PASSWORD
+      password: process.env.TEST_PASSWORD,
+      fileDownLoadUrl:process.env.FILE_DOWNLOAD_URL
     },
 
     // Setup Node event listeners for tasks, plugins, etc.
