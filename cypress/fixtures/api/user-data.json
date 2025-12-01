@@ -1,0 +1,47 @@
+{
+  "newUser": {
+    "name": "John Doe",
+    "email": "john.doe@test.com",
+    "username": "johndoe",
+    "phone": "1-770-736-8031",
+    "website": "johndoe.com",
+    "company": {
+      "name": "Doe Industries",
+      "catchPhrase": "Innovation at its best",
+      "bs": "harness cutting-edge technologies"
+    },
+    "address": {
+      "street": "123 Main St",
+      "suite": "Apt. 1",
+      "city": "New York",
+      "zipcode": "10001",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    }
+  },
+  "updateUser": {
+    "name": "Jane Doe",
+    "email": "jane.doe@test.com",
+    "username": "janedoe"
+  },
+  "userSchema": {
+    "id": "number",
+    "name": "string",
+    "email": "string",
+    "username": "string"
+  },
+  "testUsers": [
+    {
+      "id": 1,
+      "name": "Test User 1",
+      "email": "user1@test.com"
+    },
+    {
+      "id": 2,
+      "name": "Test User 2",
+      "email": "user2@test.com"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "validCredentials": {
+    "email": "test@example.com",
+    "password": "SuperSecret123"
+  },
+  "invalidCredentials": {
+    "email": "test@example.com",
+    "password": "WrongPassword"
+  },
+  "adminCredentials": {
+    "email": "admin@example.com",
+    "password": "Admin@123",
+    "role": "admin"
+  },
+  "userCredentials": {
+    "email": "user@example.com",
+    "password": "User@123",
+    "role": "user"
+  },
+  "missingEmail": {
+    "password": "SuperSecret123"
+  },
+  "missingPassword": {
+    "email": "test@example.com"
+  }
+}

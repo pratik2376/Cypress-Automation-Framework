@@ -1,5 +1,8 @@
 const { defineConfig } = require('cypress');
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin');
+const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -9,13 +12,22 @@ module.exports = defineConfig({
     // Base URL for all test URLs
     // baseUrl: 'http://localhost:3000',
 
+    // Base URL for API tests
+    baseUrl: process.env.API_URL || 'https://practice.expandtesting.com/notes/api',
+
+    // Spec pattern to include both .spec.js and .feature files
+    specPattern: "cypress/e2e/**/*.{spec.js,feature}",
+
+    // Exclude patterns
+    excludeSpecPattern: ['*.hot-update.js'],
+
     // Viewport size for the browser window
     viewportWidth: 1280,
     viewportHeight: 720,
      // Timeout for page load
      pageLoadTimeout: 60000, // 60 seconds
     
-     specPattern: '**/*.spec.js',
+    //  specPattern: '**/*.spec.js',
     
 
     // Timeout settings for various actions
@@ -50,6 +62,15 @@ module.exports = defineConfig({
 
     // Setup Node event listeners for tasks, plugins, etc.
     setupNodeEvents(on, config) {
+
+      preprocessor.addCucumberPreprocessorPlugin(on, config);
+
+      on(
+        "file:preprocessor",
+        createBundler({
+          plugins: [createEsbuildPlugin.default(config)],
+        })
+      );
       // Example: Setting up a task to read a file
       on('task', {downloadFile},{
         readFile(filePath) {
